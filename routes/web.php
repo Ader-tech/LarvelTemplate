@@ -15,5 +15,5 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/',[PageController::class, 'index']);
-Route::get('/sendmessage',[PageController::class, 'sendMessage']);
-Route::post('/sendmessage',[UserController::class, 'sendMessage']);
+
+Route::post('/contact',[PageController::class, 'contact']);
