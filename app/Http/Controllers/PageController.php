@@ -15,7 +15,7 @@ class PageController extends Controller
              'name'=> 'required',
               'email'=> 'required',
               'subject'=> 'required',
-              'Message'=> 'required',            
+              'message'=> 'required',            
          ]);
     
          $contact = new Contact;
