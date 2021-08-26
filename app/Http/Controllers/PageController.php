@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Contact;
+use App\Models\Contact;
 class PageController extends Controller
 {
     public function index(){
@@ -24,6 +24,6 @@ class PageController extends Controller
          $contact->subject = $request->subject;
          $contact->message = $request->message;
          $contact->save();
-         return redirect('/welcome');
+         return redirect('/');
     }
 }
