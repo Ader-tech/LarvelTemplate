@@ -3,5 +3,10 @@
         @foreach ($errors->all() as $error)
             <li> {{$error}}</li>
         @endforeach
-     </div>   
+     </div>      
+@endif
+@if(session('success'))
+    <div class="alert alert-success" id = "message-error">
+        {{session('success')}}
+    </div>
 @endif

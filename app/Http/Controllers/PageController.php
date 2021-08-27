@@ -24,6 +24,6 @@ class PageController extends Controller
          $contact->subject = $request->subject;
          $contact->message = $request->message;
          $contact->save();
-         return redirect('/');
+         return redirect('/')->with('success','Your message was sent succeccfully');
     }
 }
