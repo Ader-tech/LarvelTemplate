@@ -45,7 +45,7 @@
 
       <nav class="nav-menu">
         <ul>
-          <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li class="active"><a href="/"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
 
@@ -70,7 +70,7 @@
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>My Skills are Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row skills-content">
@@ -175,60 +175,59 @@
 
     <section id="contact" class="contact">
       <div class="container">
-
         <div class="section-title">
           <h2>Contact</h2>
         </div>
-
+        
         <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
+        
+          <!-- <div class="row"> -->
+            <div class="col-md-5 align-items-stretch">
+              <div class="info">
               
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>adepojuronkemercy@gmail.com</p>
+                <div class="email">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>adepojuronkemercy@gmail.com</p>
+                </div>
+  
               </div>
+            </div>
 
+            <div class="col-md-6 mt-1 align-items-stretch">
+            @include('message')
+
+              <form action="/contact" method="post" role="form">
+                @csrf
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" class="form-control"/>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Email</label>
+                    <input type="email" class="form-control" name="email">
+                    <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name">Subject</label>
+                  <input type="text" class="form-control" name="subject"/>
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  <textarea class="form-control" name="message" rows="10"></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="text-center"><button class="btn btn-primary">Send Message</button></div>
+              </form>
             </div>
 
           </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="/contact" method="post" role="form" class="php-email-form">
-            @csrf
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
         </div>
-
-      </div>
+      <!-- </div> -->
     </section>
-
   </main>
 
   <footer id="footer">
@@ -255,6 +254,13 @@
   <script src="assets/vendor/aos/aos.js"></script>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('message-error').scrollIntoView({behavior:'smooth'})
+    setTimeout(()=>{
+      document.getElementById('message-error').remove()
+
+    }, 5000)
+  </script>
 
 </body>
 
